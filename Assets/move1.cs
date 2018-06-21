@@ -25,7 +25,7 @@ public class move1 : MonoBehaviour
     {   if (transform.position.x < -37)
         {
             float y = Random.Range(7.5f, 50f);
-            transform.position = new Vector3(50, y, -7);
+            transform.position = new Vector3(60, y, -7);
 
 
         }
