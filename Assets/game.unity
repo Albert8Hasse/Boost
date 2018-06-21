@@ -625,6 +625,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1414973595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 2.634, y: 2.4, z: -39.3}
   m_LocalScale: {x: 28.494987, y: 2.0897214, z: 1}
   m_Children: []
@@ -760,29 +761,56 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: f622e0d5f392de94bbb07d91df7ba654, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1582627579
+=======
+  m_LocalPosition: {x: 0.048993483, y: -0.06207972, z: 0.020585647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1851169022
+>>>>>>> parent of e9b24ab... get_ball
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1582627582}
   - component: {fileID: 1582627581}
   - component: {fileID: 1582627583}
   - component: {fileID: 1582627580}
   m_Layer: 0
   m_Name: sky
+=======
+  - component: {fileID: 1851169026}
+  - component: {fileID: 1851169025}
+  - component: {fileID: 1851169024}
+  - component: {fileID: 1851169023}
+  m_Layer: 0
+  m_Name: Cube
+>>>>>>> parent of e9b24ab... get_ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!114 &1582627580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1582627579}
+=======
+--- !u!23 &1851169023
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1851169022}
+>>>>>>> parent of e9b24ab... get_ball
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f3c9a2dedb64034285c4ccf9573047a, type: 3}
@@ -822,6 +850,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: 75e4ee1bc8f9a7d47815c2b5c4e80f67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -961,6 +990,16 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987415263}
+=======
+--- !u!65 &1851169024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1851169022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+>>>>>>> parent of e9b24ab... get_ball
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -1042,6 +1081,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987415263}
   serializedVersion: 2
+<<<<<<< HEAD
   m_Mass: 1
   m_Drag: 0.5
   m_AngularDrag: 0.05
@@ -1063,10 +1103,23 @@ BoxCollider:
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1987415268
+=======
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1851169025
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1851169022}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1851169026
+>>>>>>> parent of e9b24ab... get_ball
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1987415263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 3.94, z: -10}
@@ -1076,6 +1129,15 @@ Transform:
   - {fileID: 909630593}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+=======
+  m_GameObject: {fileID: 1851169022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.167, y: 0, z: 0}
+  m_LocalScale: {x: 1.3336228, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+>>>>>>> parent of e9b24ab... get_ball
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127434925
 GameObject:

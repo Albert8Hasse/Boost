@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class fly : MonoBehaviour {
     Rigidbody rigidBody;
     AudioSource audio;
     [SerializeField] float speed = 200f;
+    [SerializeField] int life;
     [SerializeField] float upp = 50f;
     [SerializeField]float storeSpeed=0;
     float uper = 2f;
@@ -13,6 +14,7 @@ public class fly : MonoBehaviour {
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
+        life = 5;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,8 @@ public class fly : MonoBehaviour {
         rotate();
         storeSpeed = rigidBody.velocity.y;
         Reset();
+        if (life < 0)
+        { SceneManager.LoadScene(1); }
 	}
 
 
@@ -30,6 +34,7 @@ public class fly : MonoBehaviour {
         if (Input.GetKey(KeyCode.R))
             { transform.position = new Vector3(1, 3.94f, -10);
             transform.rotation=new Quaternion(0, 0, 0, 0);
+            rigidBody.velocity = new Vector3(0, 0, 0);
         }
         
 
@@ -43,17 +48,18 @@ public class fly : MonoBehaviour {
                 print("Dead");
                     transform.position = new Vector3(1, 3.94f, -10);
                     transform.rotation = new Quaternion(0, 0, 0, 0);
-
+                    life--;
+                    print(life);
                     break; }
           case "ground":
                {
-                  print(rigidBody.velocity.y);
+                
                     if (Mathf.Abs(storeSpeed) > 10)
                         rigidBody.velocity = new Vector3(0, -1 * storeSpeed, 0);
                     else
                         rigidBody.velocity = new Vector3(0,0, 0);
-                    print("collision");
-                   print(rigidBody.velocity);
+                 
+                 
                    break; }
                  
       }
