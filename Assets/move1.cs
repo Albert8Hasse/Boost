@@ -22,10 +22,10 @@ public class move1 : MonoBehaviour
     }
 
     private void renew()
-    {   if (transform.position.x < -37)
+    {   if (transform.position.x < -50)
         {
             float y = Random.Range(7.5f, 50f);
-            transform.position = new Vector3(60, y, -7);
+            transform.position = new Vector3(100, y, -7);
 
 
         }

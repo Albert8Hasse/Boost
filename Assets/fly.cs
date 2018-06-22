@@ -23,33 +23,56 @@ public class fly : MonoBehaviour {
         Up();
         rotate();
         storeSpeed = rigidBody.velocity.y;
-        Reset();
+       
         if (life < 0)
-        { SceneManager.LoadScene(1); }
-	}
+        { Invoke("Menu",2f); }
+        
+
+        ifReset();
+    }
+
+
+    private void ifReset()
+    {
+
+        if (Input.GetKey(KeyCode.R))
+            Reset();
+    }
+    private void Menu()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 
     private void Reset()
     {
-        if (Input.GetKey(KeyCode.R))
-            { transform.position = new Vector3(1, 3.94f, -10);
+       transform.position = new Vector3(-32, 4f, -8);
             transform.rotation=new Quaternion(0, 0, 0, 0);
             rigidBody.velocity = new Vector3(0, 0, 0);
-        }
+        
         
 
 
     }
+
+    
     private void OnCollisionEnter(Collision collision)
     {
+        bool thisTime = true;
         switch (collision.gameObject.tag) { 
           case "die":
                 {
-                print("Dead");
-                    transform.position = new Vector3(1, 3.94f, -10);
-                    transform.rotation = new Quaternion(0, 0, 0, 0);
-                    life--;
-                    print(life);
+
+                    if (thisTime)
+                    {
+                        print("Dead");
+
+                        Invoke("Reset", 2f);
+                        life--;
+                        print(life);
+                        thisTime = false;
+                    }
+                    
                     break; }
           case "ground":
                {
@@ -84,7 +107,12 @@ public class fly : MonoBehaviour {
     }
     private void Up()
     {
-        upp = 50;
+
+
+
+       
+        
+            upp = 50;
         uper = 2f;
         if (Input.GetKey(KeyCode.Space))
         { upp = 30; uper = 0.7f;

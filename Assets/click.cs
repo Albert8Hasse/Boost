@@ -15,7 +15,15 @@ public class click : MonoBehaviour {
 
     public void enter()
     {
+        Invoke("enternext", 0.5f);
+}
+
+
+    private void enternext()
+    {
         SceneManager.LoadScene(0);
     }
 }
+
+
 
