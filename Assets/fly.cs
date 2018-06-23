@@ -47,7 +47,7 @@ public class fly : MonoBehaviour {
     private void Reset()
     {
        transform.position = new Vector3(-32, 4f, -8);
-            transform.rotation=new Quaternion(0, 0, 0, 0);
+           // transform.rotation=new Quaternion(0, 45, 0, 0);
             rigidBody.velocity = new Vector3(0, 0, 0);
         
         
@@ -67,7 +67,7 @@ public class fly : MonoBehaviour {
                     {
                         print("Dead");
 
-                        Invoke("Reset", 2f);
+                        Invoke("Reset", 1f);
                         life--;
                         print(life);
                         thisTime = false;
@@ -97,11 +97,11 @@ public class fly : MonoBehaviour {
         { velocity = 1; }
 
         if (Input.GetKey(KeyCode.A))
-        { transform.Rotate(velocity*Vector3.forward); }
+        { transform.Rotate(velocity*Vector3.left); }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(velocity*Vector3.back);
+            transform.Rotate(velocity*Vector3.right);
         }
         rigidBody.freezeRotation = false;
     }
