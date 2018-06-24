@@ -7,14 +7,15 @@ public class pause : MonoBehaviour {
     [SerializeField] private GameObject pausePanel;
     // Use this for initialization
     void Start () {
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
 
     }
-
+    
 
 
     public void interact()
@@ -37,7 +38,7 @@ public class pause : MonoBehaviour {
     private void freeze()
     {
         Time.timeScale = 0;
-        pausePanel.SetActive(true);
+     //   pausePanel.SetActive(true);
         //Disable scripts that still work while timescale is set to 0
     }
 
@@ -45,7 +46,7 @@ public class pause : MonoBehaviour {
     private void defreeze()
     {
         Time.timeScale = 1;
-        pausePanel.SetActive(false);
+       // pausePanel.SetActive(false);
         //enable the scripts again
     }
 

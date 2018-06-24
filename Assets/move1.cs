@@ -69,7 +69,7 @@ public class move1 : MonoBehaviour
 
     private void renew()
     {
-        float y = Random.Range(7.5f, 30f);
+        float y = Random.Range(10f, 30f);
         transform.position = new Vector3(100, y, -7);
         rigidBody.velocity = speed;
 
