@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 public class fly : MonoBehaviour {
     Rigidbody rigidBody;
     AudioSource audio;
-    [SerializeField] float speed = 200f;
-    [SerializeField] int life;
-    [SerializeField] float upp = 50f;
+    [SerializeField] float speed = 1000f;
+    public int life;
+    [SerializeField] float upp = 100f;
     [SerializeField]float storeSpeed=0;
     float uper = 2f;
+
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
@@ -24,8 +25,8 @@ public class fly : MonoBehaviour {
         rotate();
         storeSpeed = rigidBody.velocity.y;
        
-        if (life < 0)
-        { Invoke("Menu",2f); }
+        if (life <= 0)
+        { Menu(); }
         
 
         ifReset();
@@ -47,7 +48,7 @@ public class fly : MonoBehaviour {
     private void Reset()
     {
        transform.position = new Vector3(-32, 4f, -8);
-           // transform.rotation=new Quaternion(0, 45, 0, 0);
+        transform.rotation = Quaternion.Euler(0,90,0);
             rigidBody.velocity = new Vector3(0, 0, 0);
         
         
@@ -96,10 +97,10 @@ public class fly : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space))
         { velocity = 1; }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetAxis("Mouse ScrollWheel")>0f)
         { transform.Rotate(velocity*Vector3.left); }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetAxis("Mouse ScrollWheel")<0f)
         {
             transform.Rotate(velocity*Vector3.right);
         }
@@ -134,6 +135,13 @@ public class fly : MonoBehaviour {
             if (!audio.isPlaying)
                 audio.Play();
            
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            rigidBody.AddRelativeForce(upp * Vector3.up);
+            if (!audio.isPlaying)
+                audio.Play();
+
         }
         else
         {
