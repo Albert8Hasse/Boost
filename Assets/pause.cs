@@ -20,16 +20,23 @@ public class pause : MonoBehaviour {
 
     public void interact()
     {
+        
+       
+
+
         if (isPause)
         {
             defreeze();
             isPause = false;
+            GetComponent<TextMesh>().text = "Pause";
         }
         else
 
         {
             isPause = true;
             freeze();
+           GetComponent<TextMesh>().text = "start";
+
         }
 
     }
